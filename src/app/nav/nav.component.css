@@ -1,0 +1,89 @@
+/* Estilos del componente */
+/* Asegúrate de que la clase .container esté aplicada donde la necesitas */
+
+body {
+  background-image: url(https://images.unsplash.com/photo-1695982207128-c291197f5eda?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTk0OTkyMTF8&ixlib=rb-4.0.3&q=85);
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.container {
+  width: 100%;
+  margin: auto;
+}
+
+header {
+  background: hsla(0, 0%, 0%, 0.6);
+  padding: 1rem 0;
+  z-index: 999;
+  width: 100%;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-inline: auto;
+  color: #fff;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+}
+
+nav a:hover {
+  color: #4fc3f7;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .toggle {
+    transition: ease-in-out 550ms;
+    transform: translate(0px);
+    opacity: 1;
+    display: block;
+  }
+
+  .header-container {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: hsla(0, 0%, 0%, 0.5);
+    backdrop-filter: blur(10px);
+    transform: translateX(-500px);
+    opacity: 0;
+  }
+
+  nav li {
+    padding: 1rem;
+    cursor: pointer;
+  }
+
+  nav li:hover {
+    background: hsla(0, 0%, 0%, 0.7);
+  }
+
+  .hamburger {
+    display: block;
+  }
+}

@@ -1,0 +1,62 @@
+.container {
+  width: 100%;
+  margin: auto;
+}
+
+footer {
+  background: hsla(0, 0%, 0%, 0.6);
+  padding: 1rem 0;
+  z-index: 999;
+  width: 100%;
+}
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  gap: 2rem;
+}
+
+.fa-solid {
+  font-size: 3em;
+  color: black;
+}
+.fa-brands {
+  font-size: 3em;
+  color: black;
+}
+
+@media (max-width: 600px) {
+  .toggle {
+    transition: ease-in-out 550ms;
+    transform: translate(0px);
+    opacity: 1;
+    display: block;
+  }
+
+  .footer-container {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  ul {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: hsla(0, 0%, 0%, 0.5);
+    backdrop-filter: blur(10px);
+    transform: translateX(-500px);
+    opacity: 0;
+  }
+
+  li {
+    padding: 1rem;
+    cursor: pointer;
+  }
+
+  li:hover {
+    background: hsla(0, 0%, 0%, 0.7);
+  }
+}

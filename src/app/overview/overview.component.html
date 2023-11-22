@@ -1,1 +1,49 @@
-<p>overview works!</p>
+<div class="container">
+  <div class="about">
+    <h1>¡Bienvenido a Carnicería El Manchego!</h1>
+    <p>
+      En nuestro establecimiento, nos enorgullece ofrecer una exquisita
+      selección de carnes de la más <span>alta calidad</span>. Disfruta de la
+      jugosidad del <span>cerdo</span>, la ternura de la <span>ternera</span> y
+      la distinción del <span>cordero</span>, todo con la garantía de una
+      categoría excepcional. Nuestros <span>jamones</span> son un deleite para
+      los paladares más exigentes, y nuestros preparados
+      <span>gourmet</span> elevan la experiencia gastronómica a nuevos niveles.
+      <br />En <span>Carnicería El Manchego</span>, nos esforzamos por
+      proporcionar productos que no solo cumplen, sino que
+      <span>superan las expectativas de nuestros clientes</span>. Ven y descubre
+      la diferencia en cada corte. La calidad es nuestro compromiso, y tu
+      <span>satisfacción</span> es nuestra prioridad. <br />
+      ¡Te esperamos para ofrecerte una experiencia culinaria única en
+      <span>Carnicería El Manchego</span>!
+    </p>
+  </div>
+
+  <p-carousel
+    [value]="products"
+    [numVisible]="5"
+    [numScroll]="3"
+    [circular]="false"
+    [responsiveOptions]="responsiveOptions"
+    styleClass="custom-carousel"
+  >
+    <ng-template let-product pTemplate="item">
+      <div class="product-container">
+        <div class="product-image">
+          <img [src]="product.image" [alt]="product.name" class="product-img" />
+        </div>
+        <div class="product-details">
+          <h4 class="product-name">{{ product.name }}</h4>
+          <h6 class="product-price">{{ "$" + product.price }}</h6>
+          <p-tag
+            [value]="product.inventoryStatus"
+            [severity]="getSeverity(product.inventoryStatus)"
+          ></p-tag>
+          <div class="car-buttons mt-5">
+            <!-- Otros elementos según tus necesidades -->
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>
+</div>
